@@ -80,36 +80,77 @@ nav .logo {
   padding: 20px;
   margin-top: 25px;
   border-radius: 5px;
+  visibility: hidden;
 }
 
-.user {
+.user-body {
   display: flex;
   align-items: center;
+  margin-bottom: 45px;
 }
 
-.user img {
+.follow-repos {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: 500px;
+  margin: auto;
+  background-color: #19192c;
+  color: #fff;
+  padding: 25px 35px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.follow-repos h3 {
+  font-weight: 500;
+}
+
+.follow-repos div span {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.follow-repos h3:nth-child(2) {
+  margin: 14px 30px;
+}
+
+.user-body img {
   border-radius: 50%;
   height: 200px;
   width: 200px;
 }
 
-.user .user-info {
+.user-body .user-info {
   margin-left: 35px;
   letter-spacing: 1px;
 }
 
-.user .user-info h1 {
+.user-body .user-info h1 {
   font-size: 30px;
 }
 
-.user .user-info h3 {
+.user-body .user-info h3 {
   margin: 30px 0;
   font-size: 23px;
   text-transform: capitalize;
 }
 
-.user .user-info h2 {
+.user-body .user-info h2 {
   font-size: 20px;
   color: grey;
   font-weight: 500;
+}
+
+.title {
+  text-align: center;
+  font-size: 17px;
+  margin-top: 50px;
+  letter-spacing: 2px;
+  background: #fff;
+  color: #000000;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: 400;
+  cursor: pointer;
 }

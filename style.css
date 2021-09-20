@@ -93,7 +93,7 @@ nav .logo {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  max-width: 500px;
+  max-width: 395px;
   margin: auto;
   background-color: #19192c;
   color: #fff;
@@ -153,4 +153,37 @@ nav .logo {
   padding: 10px;
   font-weight: 400;
   cursor: pointer;
+}
+
+@media (max-width: 922px) {
+  .page-container {
+    padding: 0 50px;
+  }
+}
+
+@media (max-width: 620px) {
+  .user-body img {
+    height: 150px;
+    width: 150px;
+  }
+
+  .user-body .user-info h1 {
+    font-size: 23px;
+  }
+
+  .user-body .user-info h3 {
+    font-size: 18px;
+  }
+
+  .user-body .user-info h2 {
+    font-size: 14px;
+  }
+
+  .follow-repos div span {
+    font-size: 17px;
+  }
+
+  .btn {
+    font-size: 14px;
+  }
 }

@@ -1,45 +1,53 @@
-// [x] function to fetch the data 
-// [x] get the value of input
-// [x] Create an event on submit button
-// [x] get the ids
-// [x] function to display the data (it going to be inside the fetching data)
-// [x] transform the date format to readable format
-// [] Try to give the image absolute position
-
-// get les donner
 const search = document.getElementById("searchTxt")
 const fromEL = document.getElementById("form");
 const userEl = document.getElementById("user");
 const headerTitle = document.getElementById("headerTitle");
+const parentContainer = document.getElementsByClassName("page-container");
 
 
-//submit handler 
+
+//submit handler and fetch the data
 const submitHandler = async (e) =>  {
     e.preventDefault();
     
     //get the search term
-    const searchTerm = search.value;
-    console.log(searchTerm)
+    let searchTerm = search.value;
     //fetch the data based on the value
     if(searchTerm.trim()) {
         const response = await fetch(`https://api.github.com/users/${searchTerm}`);
         const result = await response.json();
-        console.log(result);
-
+        
         if(result.message === "Not Found" || result.login === "null") {
                 headerTitle.innerHTML=`<h2>There is no result for "${searchTerm}" Try Again </h2>`;
                 headerTitle.classList.add("title");
+                //delete The message 
+                setTimeout(()=> {
+                    headerTitle.innerHTML="";
+                    headerTitle.classList.remove("title");
+                    }, 3000)
         } else {
             userEl.style.visibility="visible";
             showUser(result);
-        }
-         
+            
+        } 
+
+    }  else {
+        headerTitle.innerHTML=`<h2>Please Type The Name of the user</h2>`;
+        headerTitle.classList.add("title");
+        //delete The message 
+        setTimeout(()=> {
+        headerTitle.innerHTML="";
+        headerTitle.classList.remove("title");
+        }, 3000)
+        
     }
+
 
 }
 
 
 
+//Show the user into the DOM
 const showUser = (user) => {
     const {name, login, company, avatar_url, followers, following, created_at, public_repos} = user;
     
